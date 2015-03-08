@@ -1,0 +1,26 @@
+Yocto EHCI-Debug Layer for USB Device/OTG Targets
+======================================================
+
+This layer adds the ability to use any linux board that can act as a USB device (including OTG)
+as a simple EHCI debug controller using the Linux USB Gadget EHCI Debug Port driver.
+
+More information, including a simple how-to, to follow.
+
+
+Adding the echi-debug layer to your build
+=================================================
+
+In order to use this layer, you need to make the build system aware of
+it.
+
+Assuming the echi-debug layer exists at the top-level of your
+yocto build tree, you can add it to the build system by adding the
+location of the echi-debug layer to bblayers.conf, along with any
+other layers needed. e.g.:
+
+  BBLAYERS ?= " \
+    /path/to/yocto/meta \
+    /path/to/yocto/meta-yocto \
+    /path/to/yocto/meta-yocto-bsp \
+    /path/to/yocto/meta-echi-debug \
+    "
